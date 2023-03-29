@@ -22,19 +22,19 @@ The polyfill will only be loaded if the URLPattern doesn't already exist on the 
 // Conditional ESM module loading (Node.js and browser)
 // @ts-ignore: Property 'UrlPattern' does not exist 
 if (!globalThis.URLPattern) { 
-  await import("urlpattern-polyfill");
+  await import("@netlify/urlpattern-polyfill");
 }
 /** 
  * The above is the recommended way to load the ESM module, as it only
  * loads it on demand, thus when not natively supported by the runtime or
  * already polyfilled.
  */
-import "urlpattern-polyfill";
+import "@netlify/urlpattern-polyfill";
 
 /** 
  * In case you want to replace an existing implementation with the polyfill:
  */
-import {URLPattern} from "urlpattern-polyfill";
+import {URLPattern} from "@netlify/urlpattern-polyfill";
 globalThis.URLPattern = URLPattern
 ```
 
@@ -43,19 +43,19 @@ globalThis.URLPattern = URLPattern
 ```javascript
 // Conditional CJS module loading (Node.js)
 if (!globalThis.URLPattern) {
-   require("urlpattern-polyfill");
+   require("@netlify/urlpattern-polyfill");
 }
 /** 
  * The above is the recommended way to load the CommonJs module, as it only
  * loads it on demand, thus when not natively supported by the runtime or
  * already polyfilled.
  */
-require("urlpattern-polyfill");
+require("@netlify/urlpattern-polyfill");
 
 /** 
  * In case you want to replace an existing implementation with the polyfill:
  */
-const {URLPattern} = require("urlpattern-polyfill");;
+const {URLPattern} = require("@netlify/urlpattern-polyfill");;
 globalThis.URLPattern = URLPattern
 ```
 > ## Note:

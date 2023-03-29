@@ -1,4 +1,4 @@
-require("urlpattern-polyfill");
+require("@netlify/urlpattern-polyfill");
 const test = require("ava");
 
 const baseURL = "https://example.com";
@@ -9,6 +9,6 @@ test("urlPattern", (t) => {
 });
 
 test("exports urlPattern", (t) => {
-  const { URLPattern } = require("urlpattern-polyfill");
+  const { URLPattern } = require("@netlify/urlpattern-polyfill");
   t.true(typeof URLPattern === "function");
 });

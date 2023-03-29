@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 
 import { runTests } from "./wpt/wpt-test-runner.js";
 
-import "urlpattern-polyfill";
+import "@netlify/urlpattern-polyfill";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
